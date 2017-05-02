@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from url_shortener import views as url_shortener_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', url_shortener_views.index),
+ 	url(r'^(?P<short_code>[0-9a-zA-Z]+)', url_shortener_views.redirect),
 ]

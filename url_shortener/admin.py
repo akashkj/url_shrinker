@@ -2,5 +2,6 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+from url_shortener.models import Url
 
-# Register your models here.
+admin.site.register(Url)

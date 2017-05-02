@@ -1,0 +1,14 @@
+{% extends 'url_shortener/base.html' %}
+
+{% block title %}
+<title>Url Shortener Demo</title>
+{% endblock %}
+
+{% block body %}
+<form method="POST">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}
