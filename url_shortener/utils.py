@@ -13,7 +13,7 @@ def get_usable_shortcode():
 def get_url_for_shortcode(shortcode):
 	id_of_url = decode(shortcode)
 	try:
-		return Url.objects.get(id=id_of_url).url
+		return Url.objects.get(id=id_of_url, active=True).url
 	except Exception:
 		return None
 
