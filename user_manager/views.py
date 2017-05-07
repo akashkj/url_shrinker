@@ -5,8 +5,12 @@ from django.shortcuts import render
 
 
 def register_user(request):
-	pass
+	if request.method == 'POST':
+		pass
+	return render(request, 'user_manager/register.html')
 
 
 def login_user(request):
-	pass
+	if request.method == 'POST':
+		pass
+	return render(request, 'user_manager/login.html')
