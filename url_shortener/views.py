@@ -10,7 +10,6 @@ from .utils import get_usable_shortcode, get_url_for_shortcode
 
 
 def index(request):
-	print request.method
 	if request.method == 'POST':
 		form = UrlForm(request.POST)
 		if form.is_valid():
@@ -19,9 +18,8 @@ def index(request):
 			Url(url=data['url'], short_code=short_code).save()
 			return HttpResponse("<a href='http://127.0.0.1:8000/{}'>http://127.0.0.1:8000/{}</a>".format(short_code, short_code))
 		return HttpResponse("not valid")
-	else:
-		form = UrlForm()
-		return render(request, 'url_shortener/index.html', {"form": form})
+	form = UrlForm()
+	return render(request, 'url_shortener/index.html', {"form": form})
 
 
 def redirect(request, short_code):
