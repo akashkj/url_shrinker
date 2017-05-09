@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from url_shortener.models import Url
+from .models import Url, Click
 
 admin.site.register(Url)
+admin.site.register(Click)

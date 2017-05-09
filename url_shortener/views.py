@@ -18,8 +18,9 @@ def index(request):
 			Url(url=data['url'], short_code=short_code).save()
 			return HttpResponse("<a href='http://127.0.0.1:8000/{}'>http://127.0.0.1:8000/{}</a>".format(short_code, short_code))
 		return HttpResponse("not valid")
-	form = UrlForm()
-	return render(request, 'url_shortener/index.html', {"form": form})
+	else:
+		form = UrlForm()
+		return render(request, 'url_shortener/index.html', {"form": form})
 
 
 def redirect(request, short_code):

@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from url_shortener import views as url_shortener_views
+from user_manager import views as user_manager_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^login$', user_manager_views.login),
+    url(r'^register$', user_manager_views.register),
     url(r'^$', url_shortener_views.index),
  	url(r'^(?P<short_code>[0-9a-zA-Z]+)', url_shortener_views.redirect),
 ]
